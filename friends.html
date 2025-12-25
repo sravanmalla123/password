@@ -5,347 +5,334 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Friends | NITW Internship Memories</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Poppins,sans-serif;
+ margin:0;
+ padding:0;
+ box-sizing:border-box;
+ font-family:Poppins,sans-serif;
 }
-
 body{
-    background:linear-gradient(135deg,#071824,#0b1d26,#031018);
-    color:#fff;
-    overflow-x:hidden;
+ background:linear-gradient(135deg,#071824,#0b1d26,#031018);
+ color:#fff;
+ overflow-x:hidden;
 }
-
 .slider-container{
-    position:relative;
-    height:80vh;
-    width:100%;
-    overflow:hidden;
+ position:relative;
+ height:80vh;
+ width:100%;
+ overflow:hidden;
 }
-
 .slide{
-    position:absolute;
-    width:100%;
-    height:100%;
-    opacity:0;
-    transition:opacity 1.5s ease-in-out;
-    object-fit:cover;
+ position:absolute;
+ width:100%;
+ height:100%;
+ opacity:0;
+ transition:opacity 1.5s ease-in-out;
+ object-fit:cover;
+ display:flex;
+ align-items:center;
+ justify-content:center;
 }
-
 .slide.active{
-    opacity:1;
+ opacity:1;
 }
-
-
+.slide.active svg{
+ animation:slideIn 1s ease-out;
+}
+@keyframes slideIn{
+ from{transform:scale(0.9);opacity:0;}
+ to{transform:scale(1);opacity:1;}
+}
 .slider-container::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:linear-gradient(0deg, rgba(255,223,105,0) 0%, rgba(255,223,105,0.3) 50%, rgba(255,223,105,0) 100%);
-    pointer-events:none;
-    animation:goldenUp 3s linear infinite;
-    z-index:1;
+ content:'';
+ position:absolute;
+ inset:0;
+ background:linear-gradient(0deg, rgba(255,223,105,0) 0%, rgba(255,223,105,0.3) 50%, rgba(255,223,105,0) 100%);
+ pointer-events:none;
+ animation:goldenUp 3s linear infinite;
+ z-index:1;
 }
 @keyframes goldenUp{
-    0%{background-position:0% 100%;}
-    100%{background-position:0% 0%;}
+ 0%{background-position:0% 100%;}
+ 100%{background-position:0% 0%;}
 }
-
-
 .particles{
-    position:absolute;
-    width:100%;
-    height:100%;
-    pointer-events:none;
-    z-index:2;
+ position:absolute;
+ width:100%;
+ height:100%;
+ pointer-events:none;
+ z-index:2;
 }
-
-
 .slider-text{
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    text-align:center;
-    z-index:3;
+ position:absolute;
+ top:50%;
+ left:50%;
+ transform:translate(-50%,-50%);
+ text-align:center;
+ z-index:3;
 }
 .slider-text h1{
-    font-size:3.5rem;
-    color:#ffd369;
-    text-shadow:0 0 35px rgba(255,211,105,.8);
+ font-size:3.5rem;
+ color:#ffd369;
+ text-shadow:0 0 35px rgba(255,211,105,.8);
 }
 .slider-text p{
-    font-size:1.3rem;
-    margin-top:15px;
-    opacity:.9;
+ font-size:1.3rem;
+ margin-top:15px;
+ opacity:.9;
 }
-
-
 .title{
-    text-align:center;
-    margin:60px 0 40px;
+ text-align:center;
+ margin:60px 0 40px;
 }
 .title h2{
-    color:#ffd369;
-    font-size:2.5rem;
+ color:#ffd369;
+ font-size:2.5rem;
 }
 .title p{
-    opacity:.8;
-    margin-top:10px;
+ opacity:.8;
+ margin-top:10px;
 }
-
-
 .gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-    padding:0 8%;
-    margin-bottom:60px;
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+ gap:30px;
+ padding:0 8%;
+ margin-bottom:60px;
 }
-
-
 .card{
-    background:rgba(255,255,255,.08);
-    border-radius:25px;
-    overflow:hidden;
-    backdrop-filter:blur(12px);
-    transition:.5s;
-    cursor:pointer;
+ background:rgba(255,255,255,.08);
+ border-radius:25px;
+ overflow:hidden;
+ backdrop-filter:blur(12px);
+ transition:.5s;
+ cursor:pointer;
 }
 .card:hover{
-    transform:translateY(-12px);
-    box-shadow:0 25px 50px rgba(255,211,105,.45);
+ transform:translateY(-12px);
+ box-shadow:0 25px 50px rgba(255,211,105,.45);
 }
-.card img{
-    width:100%;
-    height:240px;
-    object-fit:cover;
+.card svg{
+ width:100%;
+ height:240px;
+ object-fit:cover;
 }
 .card-content{
-    padding:20px;
+ padding:20px;
 }
 .card-content h3{
-    color:#ffd369;
-    margin-bottom:8px;
+ color:#ffd369;
+ margin-bottom:8px;
 }
 .card-content p{
-    font-size:.95rem;
-    line-height:1.7;
-    opacity:.9;
+ font-size:.95rem;
+ line-height:1.7;
+ opacity:.9;
 }
-
 .quotation{
-    text-align:center;
-    margin:50px 10%;
-    font-size:1.3rem;
-    font-style:italic;
-    color:#ffd369;
-    text-shadow:0 0 10px rgba(255,211,105,.6);
-    line-height:1.6;
+ text-align:center;
+ margin:50px 10%;
+ font-size:1.3rem;
+ font-style:italic;
+ color:#ffd369;
+ text-shadow:0 0 10px rgba(255,211,105,.6);
+ line-height:1.6;
 }
-
-
 .footer{
-    text-align:center;
-    padding:40px;
-    background:linear-gradient(transparent,#000);
-    opacity:.8;
+ text-align:center;
+ padding:40px;
+ background:linear-gradient(transparent,#000);
+ opacity:.8;
 }
-
-
 .lightbox{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.92);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    z-index:999;
+ position:fixed;
+ inset:0;
+ background:rgba(0,0,0,.92);
+ display:none;
+ align-items:center;
+ justify-content:center;
+ z-index:999;
 }
-.lightbox img{
-    max-width:90%;
-    max-height:90%;
-    border-radius:18px;
-    box-shadow:0 0 35px rgba(255,211,105,.6);
+.lightbox svg{
+ max-width:90%;
+ max-height:90%;
+ border-radius:18px;
+ box-shadow:0 0 35px rgba(255,211,105,.6);
 }
 .lightbox span{
-    position:absolute;
-    top:25px;
-    right:35px;
-    font-size:2.5rem;
-    cursor:pointer;
-    color:#ffd369;
+ position:absolute;
+ top:25px;
+ right:35px;
+ font-size:2.5rem;
+ cursor:pointer;
+ color:#ffd369;
 }
-
-
 .back{
-    display:block;
-    width:max-content;
-    margin:40px auto;
-    padding:14px 40px;
-    background:#ffd369;
-    color:#000;
-    text-decoration:none;
-    font-weight:600;
-    border-radius:40px;
-    transition:.35s;
+ display:block;
+ width:max-content;
+ margin:40px auto;
+ padding:14px 40px;
+ background:#ffd369;
+ color:#000;
+ text-decoration:none;
+ font-weight:600;
+ border-radius:40px;
+ transition:.35s;
 }
 .back:hover{
-    transform:scale(1.1);
+ transform:scale(1.1);
 }
-
-
 @media(max-width:768px){
-    .slider-text h1{font-size:2.5rem;}
-    .slider-text p{font-size:1rem;}
+ .slider-text h1{font-size:2.5rem;}
+ .slider-text p{font-size:1rem;}
 }
 </style>
 </head>
-
 <body>
-
 <!-- HERO SLIDER -->
 <div class="slider-container">
-    <img src="friends1.jpg" class="slide active">
-    <img src="friends2.jpg" class="slide">
-    <img src="friends3.jpg" class="slide">
-    <img src="friends4.jpg" class="slide">
-    <img src="friends5.jpg" class="slide">
-    <img src="friends6.jpg" class="slide">
-    <img src="friends7.jpg" class="slide">
-    <img src="friends8.jpg" class="slide">
-    <img src="friends9.jpg" class="slide">
-    <img src="friends10.jpg" class="slide">
-    <img src="friends11.jpg" class="slide">
-    <img src="friends12.jpg" class="slide">
-    <img src="friends13.jpg" class="slide">
-    <img src="friends14.jpg" class="slide">
-    <img src="friends15.jpg" class="slide">
-    <img src="friends16.jpg" class="slide">
-    <img src="friends17.jpg" class="slide">
-    <img src="friends18.jpg" class="slide">
-    <img src="friends19.jpg" class="slide">
-    <img src="friends20.jpg" class="slide">
-    <img src="friends21.jpg" class="slide">
-
-    <div class="slider-text">
-        <h1>Friends Forever</h1>
-        <p>Celebrating Achievements & Memories of our Internship</p>
-    </div>
-    <canvas class="particles"></canvas>
+<div class="slide active" id="slide-1"></div>
+<div class="slide" id="slide-2"></div>
+<div class="slide" id="slide-3"></div>
+<div class="slide" id="slide-4"></div>
+<div class="slide" id="slide-5"></div>
+<div class="slider-text">
+<h1>Friends Forever</h1>
+<p>Celebrating Achievements & Memories of our Internship</p>
+</div>
+<canvas class="particles"></canvas>
 </div>
 
 <!-- GALLERY SECTION -->
 <div class="title">
-    <h2>Friendship Moments</h2>
-    <p>Every smile here tells a story</p>
+<h2>Friendship Moments</h2>
+<p>Every smile here tells a story</p>
 </div>
-
 <div class="gallery" id="gallery"></div>
 
 <!-- QUOTATION -->
 <div class="quotation">
-    "Friendship is the golden thread that ties the hearts of all people together." </div>
+"Friendship is the golden thread that ties the hearts of all people together."
+</div>
 
 <!-- FOOTER -->
 <div class="footer">
-    © 2025 NIT Warangal Internship Memories
+© 2025 NIT Warangal Internship Memories
 </div>
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
-    <span onclick="closeLightbox()">×</span>
-    <img id="lightboxImg">
+<span onclick="closeLightbox()">×</span>
+<svg id="lightboxImg" viewBox="0 0 400 300"></svg>
 </div>
 
 <script>
+function generateSVG(number, type='friends') {
+ const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#FFA07A', '#98D8C8', '#F7DC6F', '#BB8FCE', '#85C1E2'];
+ const color = colors[number % colors.length];
+ const hue = (number * 45) % 360;
+ 
+ return `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+ <linearGradient id="grad${number}" x1="0%" y1="0%" x2="100%" y2="100%">
+ <stop offset="0%" style="stop-color:hsl(${hue},70%,60%);stop-opacity:1" />
+ <stop offset="100%" style="stop-color:hsl(${(hue+60)%360},70%,50%);stop-opacity:1" />
+ </linearGradient>
+ </defs>
+ <rect width="400" height="300" fill="url(#grad${number})"/>
+ <circle cx="100" cy="80" r="30" fill="rgba(255,255,255,0.3)"/>
+ <circle cx="320" cy="250" r="40" fill="rgba(255,255,255,0.2)"/>
+ <rect x="50" y="100" width="300" height="120" rx="20" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+ <text x="200" y="170" font-size="32" font-weight="bold" fill="white" text-anchor="middle" font-family="Poppins">Memory ${number}</text>
+ <text x="200" y="200" font-size="16" fill="rgba(255,255,255,0.8)" text-anchor="middle" font-family="Poppins">${type} Moment</text>
+ <circle cx="80" cy="50" r="8" fill="#FFD700"/>
+ <circle cx="320" cy="80" r="6" fill="#FFD700"/>
+ <circle cx="200" cy="40" r="5" fill="#FFD700"/>
+ </svg>`;
+}
 
-const slides = document.querySelectorAll(".slide");
+// Create hero slider SVGs
+const slides = ['slide-1', 'slide-2', 'slide-3', 'slide-4', 'slide-5'];
+slides.forEach((id, i) => {
+ document.getElementById(id).innerHTML = generateSVG(i+1, 'Friends');
+});
+
 let currentIndex = 0;
 function showNextSlide(){
-    slides[currentIndex].classList.remove("active");
-    currentIndex = (currentIndex + 1) % slides.length;
-    slides[currentIndex].classList.add("active");
+ document.querySelector('.slide.active').classList.remove('active');
+ currentIndex = (currentIndex + 1) % slides.length;
+ document.getElementById(slides[currentIndex]).classList.add('active');
 }
 setInterval(showNextSlide, 3000);
 
-
-const canvas = document.querySelector(".particles");
-const ctx = canvas.getContext("2d");
+const canvas = document.querySelector('.particles');
+const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 let particlesArray = [];
-const colors = ["#ffd369","#fff1c0","#ffe07a"];
-
+const colors = ['#ffd369','#fff1c0','#ffe07a'];
 class Particle {
-    constructor(){
-        this.x = Math.random()*canvas.width;
-        this.y = canvas.height + Math.random()*100;
-        this.size = Math.random()*3 + 1;
-        this.speed = Math.random()*1 + 0.3;
-        this.color = colors[Math.floor(Math.random()*colors.length)];
-    }
-    update(){
-        this.y -= this.speed;
-        if(this.y < 0){ this.y = canvas.height; this.x = Math.random()*canvas.width; }
-    }
-    draw(){
-        ctx.fillStyle = this.color;
-        ctx.beginPath();
-        ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
-        ctx.fill();
-    }
+ constructor(){
+ this.x = Math.random()*canvas.width;
+ this.y = canvas.height + Math.random()*100;
+ this.size = Math.random()*3 + 1;
+ this.speed = Math.random()*1 + 0.3;
+ this.color = colors[Math.floor(Math.random()*colors.length)];
+ }
+ update(){
+ this.y -= this.speed;
+ if(this.y < 0){ this.y = canvas.height; this.x = Math.random()*canvas.width; }
+ }
+ draw(){
+ ctx.fillStyle = this.color;
+ ctx.beginPath();
+ ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+ ctx.fill();
+ }
 }
-
 function initParticles(num){
-    particlesArray = [];
-    for(let i=0;i<num;i++){
-        particlesArray.push(new Particle());
-    }
+ particlesArray = [];
+ for(let i=0;i<num;i++){
+ particlesArray.push(new Particle());
+ }
 }
 initParticles(150);
-
 function animate(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    particlesArray.forEach(p => { p.update(); p.draw(); });
-    requestAnimationFrame(animate);
+ ctx.clearRect(0,0,canvas.width,canvas.height);
+ particlesArray.forEach(p => { p.update(); p.draw(); });
+ requestAnimationFrame(animate);
 }
 animate();
-
 window.addEventListener('resize', ()=>{
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    initParticles(150);
+ canvas.width = window.innerWidth;
+ canvas.height = window.innerHeight;
+ initParticles(150);
 });
 
-
-const gallery = document.getElementById("gallery");
+const gallery = document.getElementById('gallery');
 for(let i=1;i<=21;i++){
-    gallery.innerHTML += `
-    <div class="card" onclick="openLightbox('friends${i}.jpg')">
-        <img src="friends${i}.jpg">
-        <div class="card-content">
-            <h3>Friendship Moment ${i}</h3>
-            <p>
-                A joyful moment captured during our internship journey,
-                filled with laughter, teamwork, and unforgettable memories.
-            </p>
-        </div>
-    </div>`;
+ const svgContent = generateSVG(i, 'Friends');
+ gallery.innerHTML += `
+ <div class="card" onclick="openLightbox(${i})">
+ ${svgContent}
+ <div class="card-content">
+ <h3>Friendship Moment ${i}</h3>
+ <p>
+ A joyful moment captured during our internship journey,
+ filled with laughter, teamwork, and unforgettable memories.
+ </p>
+ </div>
+ </div>`;
 }
 
-function openLightbox(src){
-    document.getElementById("lightboxImg").src = src;
-    document.getElementById("lightbox").style.display = "flex";
+function openLightbox(num){
+ document.getElementById('lightboxImg').innerHTML = generateSVG(num, 'Friends');
+ document.getElementById('lightbox').style.display = 'flex';
 }
 function closeLightbox(){
-    document.getElementById("lightbox").style.display = "none";
+ document.getElementById('lightbox').style.display = 'none';
 }
 </script>
-
 </body>
 </html>
