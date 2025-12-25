@@ -4,260 +4,255 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Closing Ceremony | NITW Internship</title>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <style>
-* {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
- font-family: 'Poppins', sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins, sans-serif;
 }
-body {
- background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
- color: #fff;
- overflow-x: hidden;
+
+body{
+    background:#0b1d26;
+    color:#fff;
+    overflow-x:hidden;
 }
-.container {
- max-width: 1200px;
- margin: 0 auto;
- padding: 20px;
+
+.slideshow-container{
+    position:relative;
+    height:80vh;
+    width:100%;
+    overflow:hidden;
 }
-.hero {
- text-align: center;
- padding: 80px 20px;
- background: linear-gradient(180deg, rgba(255, 211, 105, 0.1) 0%, transparent 100%);
- border-radius: 20px;
- margin: 40px 0;
+
+.slides{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position:center;
+    animation:slide 18s infinite;
+    z-index:0;
 }
-.hero h1 {
- font-size: 3rem;
- color: #ffd369;
- text-shadow: 0 0 30px rgba(255, 211, 105, 0.8);
- margin-bottom: 20px;
- line-height: 1.3;
+
+
+@keyframes slide{
+    0%{background-image:url("cermony1.jpg");}
+    16%{background-image:url("cermony2.jpg");}
+    33%{background-image:url("cermony3.jpg");}
+    50%{background-image:url("cermony4.jpg");}
+    66%{background-image:url("cermony5.jpg");}
+    83%{background-image:url("cermony6.jpg");}
+    100%{background-image:url("cermony1.jpg");}
 }
-.hero p {
- font-size: 1.2rem;
- color: #ddd;
- opacity: 0.9;
+
+.slideshow-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(255, 223, 105, 0) 0%,
+        rgba(255, 223, 105, 0.3) 50%,
+        rgba(255, 223, 105, 0) 100%
+    );
+    pointer-events: none;
+    animation: goldenUp 3s linear infinite;
+    z-index:1;
 }
-.highlights {
- display: grid;
- grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
- gap: 30px;
- margin: 60px 0;
+
+@keyframes goldenUp {
+    0% {transform: translateY(100%);}
+    50% {transform: translateY(-20%);}
+    100% {transform: translateY(100%);}
 }
-.highlight-card {
- background: rgba(255, 255, 255, 0.08);
- border: 2px solid rgba(255, 211, 105, 0.3);
- border-radius: 20px;
- padding: 30px;
- text-align: center;
- transition: all 0.4s;
- cursor: pointer;
+
+.slider-text{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+    z-index:2;
+    color:#ffd369;
 }
-.highlight-card:hover {
- transform: translateY(-15px);
- border-color: rgba(255, 211, 105, 0.7);
- box-shadow: 0 20px 50px rgba(255, 211, 105, 0.3);
- background: rgba(255, 255, 255, 0.12);
+.slider-text h1{
+    font-size:3.4rem;
+    text-shadow:0 0 25px rgba(255,211,105,.6);
 }
-.highlight-svg {
- width: 100%;
- height: 180px;
- margin-bottom: 20px;
+.slider-text p{
+    margin-top:15px;
+    font-size:1.2rem;
+    opacity:.9;
 }
-.highlight-title {
- font-size: 1.3rem;
- color: #ffd369;
- margin-bottom: 12px;
- font-weight: 600;
+
+.gallery-section{
+    padding:60px 5%;
+    text-align:center;
 }
-.highlight-text {
- font-size: 0.95rem;
- line-height: 1.6;
- color: rgba(255, 255, 255, 0.75);
+.gallery-section h2{
+    font-size:2.6rem;
+    color:#ffd369;
+    margin-bottom:10px;
 }
-.section {
- margin: 60px 0;
+.gallery-section p{
+    opacity:.85;
+    margin-bottom:40px;
 }
-.section-title {
- font-size: 2.2rem;
- color: #ffd369;
- text-align: center;
- margin-bottom: 40px;
- text-shadow: 0 0 15px rgba(255, 211, 105, 0.6);
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:35px;
 }
-.timeline {
- position: relative;
- padding: 20px 0;
+.card{
+    background:rgba(255,255,255,.06);
+    border-radius:25px;
+    overflow:hidden;
+    backdrop-filter:blur(10px);
+    transition:.5s;
 }
-.timeline-item {
- margin: 30px 0;
- padding-left: 60px;
- position: relative;
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 25px 55px rgba(255,211,105,.4);
 }
-.timeline-item::before {
- content: '';
- position: absolute;
- left: 15px;
- top: 0;
- width: 20px;
- height: 20px;
- background: #ffd369;
- border-radius: 50%;
- border: 3px solid #1a1a2e;
+.card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
 }
-.timeline-item::after {
- content: '';
- position: absolute;
- left: 24px;
- top: 20px;
- width: 2px;
- height: 100%;
- background: rgba(255, 211, 105, 0.3);
+.card-content{
+    padding:20px;
 }
-.timeline-item:last-child::after {
- display: none;
+.card-content h3{
+    color:#ffd369;
+    margin-bottom:10px;
 }
-.timeline-item h3 {
- color: #ffd369;
- font-size: 1.2rem;
- margin-bottom: 8px;
+.card-content p{
+    font-size:.95rem;
+    line-height:1.6;
+    opacity:.85;
 }
-.timeline-item p {
- color: rgba(255, 255, 255, 0.8);
- line-height: 1.6;
+
+.quotation{
+    margin:50px auto;
+    max-width:900px;
+    font-size:1.3rem;
+    font-style:italic;
+    color:#ffd369;
+    text-align:center;
+    line-height:1.8;
+    border-left:4px solid #ffd369;
+    padding-left:20px;
+    opacity:0.9;
 }
-.quote-section {
- text-align: center;
- padding: 60px 20px;
- background: rgba(255, 211, 105, 0.05);
- border-left: 4px solid #ffd369;
- border-radius: 10px;
- margin: 60px 0;
+
+.back{
+    display:block;
+    width:max-content;
+    margin:50px auto;
+    padding:14px 40px;
+    background:#ffd369;
+    color:#000;
+    text-decoration:none;
+    font-weight:600;
+    border-radius:40px;
+    transition:.35s;
 }
-.quote-section blockquote {
- font-size: 1.6rem;
- color: #ffd369;
- font-style: italic;
- margin-bottom: 20px;
- line-height: 1.8;
+.back:hover{
+    transform:scale(1.08);
 }
-.quote-section .author {
- font-size: 1rem;
- color: #999;
+
+.footer{
+    text-align:center;
+    padding:50px;
+    background:linear-gradient(transparent,#000);
+    opacity:.8;
 }
-.footer {
- text-align: center;
- padding: 40px;
- border-top: 1px solid rgba(255, 211, 105, 0.2);
- opacity: 0.8;
-}
-@media (max-width: 768px) {
- .hero h1 { font-size: 2rem; }
- .highlights { grid-template-columns: 1fr; }
- .section-title { font-size: 1.6rem; }
+
+@media(max-width:768px){
+    .slider-text h1{font-size:2.4rem;}
+    .gallery-section h2{font-size:2rem;}
+    .quotation{font-size:1rem;}
 }
 </style>
 </head>
+
 <body>
-<div class="container">
-<div class="hero">
-<h1>Celebrating Achievements & Memories of our Internship</h1>
-<p>Closing Ceremony Highlights</p>
+
+<!-- SLIDESHOW -->
+<div class="slideshow-container">
+    <div class="slides"></div>
+    <div class="slider-text">
+        <h1>Celebrating Achievements & Memories of our Internship</h1>
+        <p>Closing Ceremony Highlights</p>
+    </div>
 </div>
 
-<div class="section-title">Memorable Moments</div>
-<div class="highlights" id="highlights"></div>
+<!-- GALLERY -->
+<div class="gallery-section">
+    <h2>Closing Ceremony Memories</h2>
+    <p>Every moment shaped our journey</p>
+    <div class="gallery">
+        <div class="card">
+            <img src="cermony1.jpg">
+            <div class="card-content">
+                <h3>Team Unity</h3>
+                <p>We all gathered for a group photo celebrating our collective effort.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="cermony2.jpg">
+            <div class="card-content">
+                <h3>Mentor's Guidance</h3>
+                <p>The mentors inspired us with words of wisdom and encouragement.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="cermony3.jpg">
+            <div class="card-content">
+                <h3>Project Presentations</h3>
+                <p>Presenting our work reflected our teamwork and learning progress.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="cermony4.jpg">
+            <div class="card-content">
+                <h3>Certificates Awarded</h3>
+                <p>Receiving our internship certificates filled us with pride and joy.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="cermony5.jpg">
+            <div class="card-content">
+                <h3>Farewell Moments</h3>
+                <p>Farewell hugs and memories we will cherish forever.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="cermony6.jpg">
+            <div class="card-content">
+                <h3>Celebration & Smiles</h3>
+                <p>Everyone celebrated the end of a successful and memorable internship.</p>
+            </div>
+        </div>
+    </div>
+</div>
 
-<div class="section">
-<div class="section-title">Closing Ceremony Memories</div>
-<div class="timeline">
-<div class="timeline-item">
-<h3>Opening Remarks</h3>
-<p>We gathered to celebrate the incredible journey we've shared, reflecting on growth, friendship, and unforgettable memories made during our internship.</p>
-</div>
-<div class="timeline-item">
-<h3>Achievements Recognition</h3>
-<p>Team members were honored for their outstanding contributions, innovative ideas, and exceptional teamwork throughout the internship program.</p>
-</div>
-<div class="timeline-item">
-<h3>Heartfelt Moments</h3>
-<p>Stories were shared, laughter echoed, and bonds strengthened as we reminisced about the challenges overcome and successes celebrated together.</p>
-</div>
-<div class="timeline-item">
-<h3>Closing Message</h3>
-<p>As we conclude this chapter, we carry forward the lessons learned and the friendships forged, ready to make an impact in the world.</p>
-</div>
-</div>
+<!-- INSPIRATIONAL QUOTATION -->
+<div class="quotation">
+    "Success is best when it's shared. Cherish every moment, for memories last a lifetime." 
 </div>
 
-<div class="quote-section">
-<blockquote>"The success of an internship is not measured just by skills gained, but by the bonds formed and memories created that last a lifetime."</blockquote>
-<div class="author">— NIT Warangal Internship Team</div>
-</div>
+<a href="indexnitw.html" class="back">⬅ Back to Home</a>
 
 <div class="footer">
-© 2025 NIT Warangal - Internship Memories
+    © 2025 NIT Warangal Internship Memories
 </div>
-</div>
 
-<script>
-function generateCeremonySVG(index) {
- const colors = [
- { bg: '#FF6B6B', accent: '#FFE66D' },
- { bg: '#4ECDC4', accent: '#44A3A5' },
- { bg: '#45B7D1', accent: '#2196F3' },
- { bg: '#FFA07A', accent: '#FF7043' },
- { bg: '#98D8C8', accent: '#6DD5B9' },
- { bg: '#F7DC6F', accent: '#F39C12' },
- ];
- 
- const color = colors[index % colors.length];
- 
- return `<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" class="highlight-svg">
- <defs>
- <linearGradient id="ceremonyGrad${index}" x1="0%" y1="0%" x2="100%" y2="100%">
- <stop offset="0%" style="stop-color:${color.bg};stop-opacity:1" />
- <stop offset="100%" style="stop-color:${color.accent};stop-opacity:0.8" />
- </linearGradient>
- </defs>
- <rect width="400" height="300" fill="url(#ceremonyGrad${index})"/>
- <circle cx="200" cy="100" r="50" fill="rgba(255,255,255,0.2)"/>
- <path d="M 150 180 L 200 120 L 250 180 Z" fill="rgba(255,255,255,0.3)"/>
- <path d="M 130 200 L 200 140 L 270 200 Z" fill="rgba(255,255,255,0.25)"/>
- <path d="M 110 220 L 200 160 L 290 220 Z" fill="rgba(255,255,255,0.2)"/>
- <circle cx="80" cy="60" r="15" fill="rgba(255,255,255,0.3)"/>
- <circle cx="320" cy="80" r="20" fill="rgba(255,255,255,0.25)"/>
- <circle cx="100" cy="250" r="12" fill="rgba(255,255,255,0.3)"/>
- <circle cx="300" cy="260" r="18" fill="rgba(255,255,255,0.25)"/>
- <text x="200" y="280" font-size="16" font-weight="bold" fill="white" text-anchor="middle" font-family="Poppins">Moment ${index + 1}</text>
- </svg>`;
-}
-
-const highlights = document.getElementById('highlights');
-const highlightTitles = [
- 'Achievement',
- 'Teamwork',
- 'Growth',
- 'Friendship',
- 'Excellence',
- 'Success'
-];
-
-for(let i = 0; i < 6; i++) {
- const svgContent = generateCeremonySVG(i);
- highlights.innerHTML += `
- <div class="highlight-card">
- ${svgContent}
- <div class="highlight-title">${highlightTitles[i]}</div>
- <div class="highlight-text">
- A key aspect of our internship journey that brought us closer
- and helped us achieve our collective goals.
- </div>
- </div>`;
-}
-</script>
 </body>
 </html>
